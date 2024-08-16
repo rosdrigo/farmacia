@@ -1,31 +1,33 @@
 import React from 'react';
 import homeLogo from '../../assets/home.png'
 import './Home.css';
-import ListaCategoria from '../../components/categorias/listarCategorias/ListarCategoria';
+
 
 
 function Home() {
   return (
     <>
-      <div className="bg-purple-900 flex justify-center">
-        <div className='container grid grid-cols-2 text-white'>
-          <div className="flex flex-col gap-4 items-center justify-center py-4">
-            <h2 className='text-5xl font-bold'>Seja bem vinde!</h2>
-            <p className='text-xl'>Procure aqui a categoria do seus medicamentos</p>
+    <div className= "min-h-[83.7vh] bg-purple-900 flex flex-col items-center py-12">
+      <div className='container mx-auto grid md:grid-cols-2 gap-8 text-white px-6'>
+        <div className="flex flex-col gap-6 items-center md:items-start justify-center text-center md:text-left">
+          <h2 className='text-4xl md:text-5xl font-bold leading-tight'>
+            Seja bem-vinde!
+          </h2>
+          <p className='text-lg md:text-xl'>
+            Procure aqui a categoria dos seus medicamentos
+          </p>
+          <button className='bg-white text-purple-900 py-2 px-6 rounded-lg shadow-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-purple-600 transition-colors'>
+            Ver Categorias
+          </button>
+        </div>
 
-            <div className="flex justify-around gap-4">
-
-              <button className='rounded bg-white text-blue-800 py-2 px-4'>Ver categorias</button>
-            </div>
-          </div>
-
-          <div className="flex justify-center ">
-            <img src={homeLogo} alt="" className='w-2/3' />
-          </div>
+        <div className="flex justify-center items-center">
+          <img src={homeLogo} alt="Imagem Representativa" className='w-full max-w-md' />
         </div>
       </div>
-      <ListaCategoria />
-    </>
+    </div>
+    
+  </>
   );
 }
 

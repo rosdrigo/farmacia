@@ -9,6 +9,9 @@ import 'react-toastify/dist/ReactToastify.css';
 import ListaCategoria from './components/categorias/listarCategorias/ListarCategoria';
 import CadastrarCategoria from './components/categorias/cadastrarCategoria/CadastrarCategoria';
 import DeletarCategoria from './components/categorias/deletarCategoria/DeletarCategoria';
+import ListaProduto from './components/produtos/listaProdutos/ListaProdutos';
+import DeletarProduto from './components/produtos/deletarProduto/DeletarProduto';
+import CadastrarProduto from './components/produtos/cadastrarProduto/CadastrarProduto';
 
 function App() {
   return (
@@ -16,16 +19,19 @@ function App() {
       <BrowserRouter>
       <ToastContainer />
         <Navbar />
-        <div className='min-h-[80vh]'>
+       
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
             <Route path="/categorias" element={<ListaCategoria />} />
+            <Route path="/produtos" element={<ListaProduto />} />
             <Route path="/cadastrar" element={<CadastrarCategoria />} />
             <Route path="/editarCategoria/:id" element={<CadastrarCategoria />} />
             <Route path="/deletarCategoria/:id" element={<DeletarCategoria />} />
+            <Route path="/deletarProduto/:id" element={<DeletarProduto />} />
+            <Route path="/cadastrarProduto" element={<CadastrarProduto />} />
+            <Route path="/editarProduto/:id" element={<CadastrarProduto />} />
           </Routes>
-        </div>
         <Footer />
       </BrowserRouter>
     </>
