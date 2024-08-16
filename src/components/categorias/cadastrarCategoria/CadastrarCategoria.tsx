@@ -2,7 +2,7 @@ import React, { ChangeEvent,useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import Categoria from '../../../model/Categoria';
 import { atualizar, buscar, cadastrar } from '../../../services/Service';
-
+import { toastAlerta } from '../../../util/toastAlerta'
 
 function CadastrarCategoria() {
   const [categoria, setCategoria] = useState<Categoria>({} as Categoria);
@@ -35,13 +35,13 @@ function CadastrarCategoria() {
     if (id !== undefined) {
               await atualizar(`/categorias`, categoria, setCategoria)
 
-        alert('Categoria atualizado com sucesso')
+        toastAlerta('Categoria atualizado com sucesso','sucesso')
         retornar()
       }else {
       
         await cadastrar(`/categorias`, categoria, setCategoria
          )
-        alert('Categoria cadastrada com sucesso')
+        toastAlerta('Categoria cadastrada com sucesso','sucesso')
       }
     
 
